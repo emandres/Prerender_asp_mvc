@@ -71,7 +71,7 @@ namespace Prerender_asp_mvc
       
                 response.Write(result.ResponseBody);
                 response.Flush();
-                context.CompleteRequest();
+                response.End();
             }
         }
 
