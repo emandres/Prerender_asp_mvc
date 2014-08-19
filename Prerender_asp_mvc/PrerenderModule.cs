@@ -48,6 +48,7 @@ namespace Prerender_asp_mvc
             var httpContext = context.Context;
             var request = httpContext.Request;
             var response = httpContext.Response;
+
             if (ShouldShowPrerenderedPage(request))
             {
                 var result = GetPrerenderedPageResponse(request);
@@ -69,9 +70,9 @@ namespace Prerender_asp_mvc
                     }
                 }
       
+                response.Cache.SetCacheability(HttpCacheability.NoCache);
                 response.Write(result.ResponseBody);
-                response.Flush();
-                response.End();
+                context.CompleteRequest();
             }
         }
 
@@ -115,6 +116,7 @@ namespace Prerender_asp_mvc
 
         private static void SetNoCache(HttpWebRequest webRequest)
         {
+
             webRequest.Headers.Add("Cache-Control", "no-cache");
             webRequest.ContentType = "text/html";
         }
