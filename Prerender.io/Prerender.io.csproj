@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EF621345-0520-4F7A-80F4-2C04EEAF2D44}</ProjectGuid>
+    <ProjectGuid>{A2B5BD3A-6868-47A8-8778-77788325A666}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Prerender.io</RootNamespace>
